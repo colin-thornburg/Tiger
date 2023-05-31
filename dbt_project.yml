@@ -36,8 +36,11 @@ models:
     # Applies to all files under models/example/
     staging:
       materialized: view
+    incremental:
+      materialized: table
     intermediate:
       materialized: view
     marts:
       materialized: table
-      
+    BI:
+      materialized: table
