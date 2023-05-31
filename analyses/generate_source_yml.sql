@@ -1,0 +1,2 @@
+{{ codegen.generate_source(schema_name='jaffle_shop', database_name='dbtworkshop', generate_columns=True, include_descriptions=True) }}
+{{ codegen.generate_source(schema_name='stripe', database_name='dbtworkshop', generate_columns=True, include_descriptions=True) }}
