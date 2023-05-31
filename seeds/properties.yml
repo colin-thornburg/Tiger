@@ -1,0 +1,9 @@
+version: 2
+
+seeds:
+  - name: events
+    config:
+      column_types:
+        id: INTEGER
+        activity: VARCHAR(32)
+        event_date: DATE
