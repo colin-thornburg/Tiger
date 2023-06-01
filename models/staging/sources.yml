@@ -65,3 +65,32 @@ sources:
             description: ""
           - name: _batched_at
             description: ""
+
+  - name: tpch
+    database: dbtworkshop
+    schema: tpch_s3_test
+    loader: s3
+  
+    tables:
+      - name: customer
+        external:
+          location: "s3://dbt-data-lake-819052087103/dbtworkshopdata/customer"        # amazon s3 path prefix
+          row_format: serde 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+          table_properties: "('skip.header.line.count'='1')"
+        columns:
+          - name: c_custkey
+            data_type: varchar(255)
+          - name: c_name
+            data_type: varchar(255)
+          - name: c_address
+            data_type: varchar(255)
+          - name: c_nationkey
+            data_type: varchar(255)
+          - name: c_phone
+            data_type: varchar(255)         
+          - name: c_acctbal
+            data_type: varchar(255)
+          - name: c_mktsegment
+            data_type: varchar(255)
+          - name: c_comment
+            data_type: varchar(255) 
