@@ -21,6 +21,10 @@ sources:
             tests:
               - not_null
       - name: orders
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after: {count: 48, period: hour}
+          error_after: {count: 96, period: hour}
         columns:
           - name: id
             description: The unique identifier for the order
@@ -49,6 +53,10 @@ sources:
     description: ""
     tables:
       - name: payment
+        loaded_at_field: _batched_at
+        freshness:
+          warn_after: {count: 48, period: hour}
+          error_after: {count: 96, period: hour}
         description: ""
         columns:
           - name: id
