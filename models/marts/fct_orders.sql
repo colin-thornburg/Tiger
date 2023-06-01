@@ -1,3 +1,7 @@
+{{ config(materialized = 'table', grants = {
+    'select': ['dbtadmin']
+}) }}
+
 with
 orders as (select * from {{ ref("stg_orders") }}),
 
