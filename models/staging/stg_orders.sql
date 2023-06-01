@@ -1,3 +1,13 @@
+
+{{ config(
+    pre_hook="SELECT
+   *
+FROM
+   dbt_cthornburg.events;",
+
+) }}
+
+
 with orders as (
 
     select

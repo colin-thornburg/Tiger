@@ -1,0 +1,1 @@
+dbt run-operation stage_external_sources
