@@ -1,13 +1,18 @@
-with orders as (
+{{
+    config(
+        pre_hook="SELECT    * FROM    dbt_cthornburg.events;",
+    )
+}}
 
-    select
-        id as order_id,
-        user_id as customer_id,
-        order_date,
-        status
 
-    from {{ source('jaffle_shop', 'orders') }}
+with
+    orders as (
 
-)
+        select id as order_id, user_id as customer_id, order_date, status
 
-Select * from orders
+        from {{ source("jaffle_shop", "orders") }}
+
+    )
+
+select *
+from orders

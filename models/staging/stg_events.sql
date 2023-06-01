@@ -1,1 +1,1 @@
-Select * from {{ ref('events') }}
+select * from {{ ref("events") }}
